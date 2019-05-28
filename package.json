@@ -1,0 +1,50 @@
+{
+  "name": "jest-playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Vadim Chekulaev <v.chekulaev@fxpro.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/jest": "24.0.12",
+    "jest": "24.7.1",
+    "jest-circus": "^24.8.0",
+    "knex": "0.16.3",
+    "lint-staged": "7.0.4",
+    "mysql": "2.17.1",
+    "node": "10.6.0",
+    "ts-jest": "22.4.6",
+    "ts-node": "7.0.1",
+    "tslint": "5.10.0",
+    "tslint-config-prettier": "1.12.0",
+    "tslint-microsoft-contrib": "5.0.3",
+    "typescript": "3.4.3"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "testRunner": "jest-circus/runner",
+    "verbose": true,
+    "modulePaths": [
+      "<rootDir>/tests/"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "(/tests/scenarios/.*|(\\.|/)test)\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ],
+    "globalSetup": "./scripts/globalSetup.ts",
+    "globalTeardown": "./scripts/globalTeardown.ts",
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json",
+        "ignoreCoverageForDecorators": true,
+        "ignoreCoverageForAllDecorators": true
+      }
+    }
+  }
+}
